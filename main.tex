@@ -1,0 +1,191 @@
+\documentclass[a4paper,twocolumn,10pt]{ltjsarticle}
+
+\usepackage{geometry}
+\geometry{top=20mm, bottom=24mm, left=23mm, right=23mm}
+
+\usepackage{graphicx}
+
+\makeatletter
+  % maketitle
+  \def\@maketitle{%
+    \newpage
+    \begin{center}%
+     %和文題名
+     {\Large \textbf{\@title} \par}%
+     \vskip 9pt
+     %和文著者
+     {\large \lineskip .0em
+     \begin{tabular}[t]{c}%
+      \@author
+     \end{tabular} \par}%
+     %英文題名
+     \vskip 1.5em
+     {\Large \textbf{\etitle@etitle} \par}%
+     \vskip 0.5em
+     %英文著者
+     {\large \lineskip .0em
+     \begin{tabular}[t]{c}%
+      \etitle@eauthor
+     \end{tabular} \par}%
+     \vskip 0.5em
+    \end{center}%
+    \par\vskip 1.5em
+    \ifvoid\@abstractbox\else\centerline{\box\@abstractbox}\vskip1.5em\fi
+    }
+  % \title \author は既存のマクロを利用 \@title \author に値がセットされる.
+  \newcommand{\etitle@etitle}{}
+  \newcommand{\etitle@eauthor}{}
+  \newcommand{\affiliation}[1]{\renewcommand{\etitle@affiliation}{#1}}
+  \newcommand{\etitle}[1]{\renewcommand{\etitle@etitle}{#1}}
+  \newcommand{\eauthor}[1]{\renewcommand{\etitle@eauthor}{#1}}
+\makeatother
+
+% !!!重要!!! ファイル先頭からこの行までの間は改変しないこと．
+
+% 必要に応じて適宜パッケージを追加
+% 例：特殊な数学記号を利用する→ \usepackage{amsmath}
+
+% 和文題名
+\title{宮下ゼミ卒業論文テンプレート}
+% 和文著者
+\author{京都女子大学 現代社会学部 現代社会学科 宮下ゼミ\\
+16241000 東山 京子}
+% 英文題名
+\etitle{Manuscript Template for Graduation Thesis in Miyashita Lab.}
+% 英文著者. 和文所属と同様です
+\eauthor{Miyashita Lab., Faculty for the Contemporary Society, Kyoto Women's University\\
+16241000 Higashiyama Kyoko}
+
+% 論文の概要
+\begin{abstract}
+これは宮下ゼミの学生向けに書かれた卒業論文のテンプレートである．
+ここには卒業論文の概要（論文内容を簡潔にまとめたもの）を書く．
+研究の動機や背景，問題，解決手法，結論などを簡潔にまとめる．
+概要を読めば論文内容がだいたい示されているようにすることが重要である（もともと「概要」とはそのようなものである）．
+文章量は特に定めないが，だいたい4〜8行程度にすればバランスがよいと思われる．
+\end{abstract}
+
+\begin{document}
+% \begin{document} 直後に \maketitle コマンドを置く
+\maketitle
+
+\section{はじめに}
+
+これは宮下ゼミの学生向けに書かれた卒業論文テンプレートである．
+宮下ゼミの学生はこの内容をよく理解し，すばらしい卒業論文を作成してもらいたい．
+
+\section{卒業論文作成の流れ}
+
+卒業論文は以下のように作成し，提出すること．
+
+\subsection{論文の作成}
+
+卒業論文は電子的な形態を第一とし，紙に印刷されたものは副次的なものとする．
+つまり教務課に提出するものは第二形態であり，原本は飽くまでも電子ファイル（PDF形式）である．
+
+卒業論文は，このファイルのように文書処理システム\LaTeX{}を利用して作成し，PDF形式で提出する．
+
+\subsection{論文の提出}
+
+卒業論文の「提出」には2つある．
+一方はゼミ内での提出であり，他方は教務課への提出である．
+この両方が必要である．
+
+前者では，原稿はPDF形式のファイルを京女ポータルにアップロードする．
+具体的には，京女ポータル内LMSの演習VIに「卒業論文」という課題があるので，そこへアップロードする．
+期限内なら何度でもアップロードできる（最後にアップロードされたものを評価対象とする）．
+
+後者は，上記のPDFファイルを印刷して教務課窓口へ提出する．
+この際，印刷した原稿は左上をホチキス等で綴じること．
+また，提出の際には卒業論文題目用紙を添える必要がある\footnote{これには教員の署名と捺印が必要なので事前に用意すること}．
+
+どちらも1月15日17時が〆切である．
+特に教務課への提出は〆切に遅れると取り返しがつかないので充分注意すること．
+
+\section{論文作成要領}
+
+卒業論文は電子的な媒体で読む（例えばPCやタブレットの画面で閲覧する）のに適するよう作成する．
+そのため，原稿はPDF形式のファイルで提出する．
+PDF形式であれば文字はもちろんのこと図なども鮮明に表示／印刷されることが期待できる．
+
+\subsection{論文の書式}
+
+読みやすく明瞭かつ正確な原稿とするために，以下の指示にしたがって執筆する．
+
+\begin{itemize}
+ \item 原稿はA4判2段組で4ページ以上8ページ以内とする．
+ \item ページ数は，わかりやすさを損ねない範囲でできるだけ少なくする．
+ \item 長大なプログラムリストなどが必要不可欠な場合は，付録として原稿の末尾に付す（これはページ数に含めない）．
+ \item 先頭ページ上部に題名，所属，著者名を日本語と英語で記載する．
+ \item 本文の文字の大きさは10ポイントとする．
+ \item 文章は日本語または英語で記述する．
+ \item 本文はいくつかの節や段落に分け，明瞭簡潔な記述を心がける．
+ \item 文章は常体で記述し，句読点はコンマ「，」とピリオド「．」（どちらも全角）とする．
+ \item 著者自身を主語とするときは「著者は〜」などとし，「私」は用いない．
+ \item 文章や図表などを引用する際は引用元を明示し，著作権を侵害しないよう注意する．
+\end{itemize}
+
+\subsection{PDFファイルの作成}
+
+卒業論文はPDF形式のファイルを京女ポータルにアップロードすることにより提出する．
+提出できるファイル形式はPDFだけである．
+その際，以下のことに注する．
+
+\begin{itemize}
+ \item ファイル名には拡張子（{\tt .pdf}）を必ず付すこと（ファイル名そのものは何でも構わない）．
+ \item 図として画像を利用する場合は解像度を適切に設定する（少なくとも150dpi程度以上）．
+ \item 編集不可・印刷不可などのセキュリティ設定を施さない．
+\end{itemize}
+
+\section{図表の書き方}
+
+図表は本文中に埋め込み，番号とキャプションを付す．
+図表の配置と番号付けは自動的に行われるのでそれに任せる．
+キャプションはその図表を表す端的なものとする．
+図表は必ず本文中から参照するものとし，その際は図表の番号で参照する．
+
+以下，図の例を図\ref{fig:graphs}に示す．
+図は中央寄せ（センタリング）とし，図のキャプションは図の直下に記述する．
+
+\begin{figure}[htb]
+ \begin{center}
+  \includegraphics{graphs.pdf}
+  \caption{2部グラフから1モードグラフへの変換}
+  \label{fig:graphs}
+ \end{center}
+\end{figure}
+
+また，表の例を表\ref{tab:competency}に示す．
+表もセンタリングし，表のキャプションは表の直上に記述する．
+
+\begin{table}[htb]
+ \begin{center}
+  \caption{コンピテンシーディクショナリの項目数}
+  \label{tab:competency}
+  \begin{tabular}{cccc}
+   \hline
+   名称 & タスク & スキル & 関連知識\\
+   \hline
+   項目数 & 639 & 491 & 8843\\
+   \hline
+  \end{tabular}
+ \end{center}
+\end{table}
+
+\section{参考文献の書き方}
+
+参考文献は論文での出現順に記載し，巻末に一覧を掲載する．
+その際，雑誌の場合\cite{refjournal}と書籍の場合\cite{refbook}，WWWの場合\cite{refwww}それぞれ以下の通りに記述し，この文章のように参考文献を参照している箇所に参考文献番号を記載する．
+
+\begin{itemize}
+ \item 雑誌の場合：著者名，タイトル，雑誌名，巻，号，ページ，発行年．
+ \item 書籍の場合：著者名，書名，参照ページ（あれば），発行所，発行年．
+ \item WWWの場合：タイトル，URL，アクセス日．
+\end{itemize}
+
+\begin{thebibliography}{99}
+ \bibitem{refjournal} 宮下健輔，水野義之，京都女子大学における全学情報教育とそれを支える情報システムの変遷に関する考察，情報処理学会論文誌，Vol.53，No.3，pp. 997--1004，2012．
+ \bibitem{refbook}  福地健太郎，園山隆輔，理工系のためのよい文章の書き方，翔泳社，2019．
+ \bibitem{refwww} Overleaf, {\tt https://ja.overleaf.com/}, 2019年9月20日アクセス．
+\end{thebibliography}
+\end{document}
