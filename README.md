@@ -1,1 +1,1 @@
-# graduationthesis-template
+# 京都女子大学宮下ゼミ卒業論文テンプレート
