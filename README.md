@@ -7,7 +7,7 @@ LaTeXは「ラテック」「ラテフ」などと発音します．
 
 ## 論文執筆環境
 
-LaTeXの環境は各自のPCに[TeX Live](https://texwiki.texjp.org/?TeX%20Live)などをインストールして整えても良いですが，ここでは[Overleaf](https://www.overleaf.com/)を推奨します．
+LaTeXの環境は各自のPCに[TeX Live](https://texwiki.texjp.org/?TeX%20Live)などをインストールして整えても良いですが，ここでは[Overleaf](https://ja.overleaf.com/)を推奨します．
 Overleafを利用すると，インストール不要な上にWWWブラウザさえあればファイル編集や組版結果を確認できるなど，とても手軽にLaTeXを利用できます．
 卒論作成には無料アカウント（GoogleやTwitter等と連携するのが簡単かと思います）で充分です．
 
@@ -17,13 +17,13 @@ Overleafを利用すると，インストール不要な上にWWWブラウザさ
 
 この作業は最初に1回だけ実施すればOKです．
 
-1. [Overleaf](https://www.overleaf.com/)で無料アカウントを作成します．
-1. 卒論の雛形（テンプレート）をダウンロードして保存し，展開しておきます（[このリンク](https://github.com/kensuke-m/graduationthesis-template/archive/refs/heads/main.zip)が便利かと思います）．
+1. 卒業論文テンプレートをダウンロードして保存し，展開しておきます（[このリンク](https://github.com/kensuke-m/graduationthesis-template/archive/refs/heads/main.zip)が便利かと思います）．
+1. [Overleaf](https://ja.overleaf.com/)で無料アカウントを作成します．
 1. Overleafにログインしてページ左上にある「新規プロジェクト」をクリックします．
 1. 表示されるメニューの「空のプロジェクト」を選びます．
 1. プロジェクト名は「卒業論文」「卒論」などなんでも構いませんので入力して「作成」をクリックします．
 1. プロジェクトのページが開くので，左上にある「メニュー」をクリックします．
-1. 「設定」の「コンパイラ」が「pdfLaTeX」になっているので，これを「LaTeX」に変更します．
+1. 「設定」の中の「コンパイラ」が「pdfLaTeX」になっているので，これを「LaTeX」に変更します．
 1. ページ左上の「アップロード」ボタンをクリックし，手順2で展開したフォルダにある main.tex をドラッグ＆ドロップします．
 1. 「main.texを入れ替えるけど大丈夫？」と聞かれるので「大丈夫だ問題ない」と答えます:wink:
 1. graphs.png と ipsjunsrt.bst，latexmkrc，reference.bib もそれぞれ同じ手順でアップロードします．
